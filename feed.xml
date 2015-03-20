@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Solid Studios</title>
+    <description>Just an amazing game design company..</description>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 20 Mar 2015 10:07:35 -0400</pubDate>
+    <lastBuildDate>Fri, 20 Mar 2015 10:07:35 -0400</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Project: Binder</title>
+        <description>&lt;h4 id=&quot;binder&quot;&gt;Binder&lt;/h4&gt;
+&lt;p&gt;Binder is a game. A tool, to help you create, and to explore. The art of shaping the world around you is explored and used throughout gameplay. Begin with nothing, only your imagination. You can explore the world around you, or begin discovering the strange life-filled scene all around you. Your initial home is the world of Thython, the land of light. Golden water, and lush forests bloom around you. The entire world is at your fingertips, will you discover new things? Travel to distant worlds? Or will you create powerful things and wonderful times? It’s your choice!&lt;/p&gt;
+
+&lt;h4 id=&quot;about&quot;&gt;About&lt;/h4&gt;
+&lt;p&gt;Binder, not yet released, is recommended for people ages 10+&lt;/p&gt;
+</description>
+        <pubDate>Thu, 19 Mar 2015 08:53:15 -0400</pubDate>
+        <link>http://yourdomain.com/project/binder/binder</link>
+        <guid isPermaLink="true">http://yourdomain.com/project/binder/binder</guid>
+        
+        
+        <category>project</category>
+        
+        <category>binder</category>
+        
+      </item>
+    
+      <item>
+        <title>Blog: Binder development is starting!</title>
+        <description>&lt;h4 id=&quot;binder-the-intuitively-creative-game&quot;&gt;Binder, the intuitively creative game.&lt;/h4&gt;
+
+&lt;p&gt;Hello, my name is Walt. I write code for fun, and work on projects that are exactly that! Binder is one of those projects. Together with lowell07 (Lowell Davis), we have been able to make a game. The game is titled Binder, not for any specific reason other than it sounds weird. &lt;/p&gt;
+
+&lt;p&gt;Inside Binder you play as a person, a person who doesn’t like the world as it is. So, by definition he/she wants to change that. Your job is to repair the universe, build star-gates, fight monsters, eat cookies, and have fun! &lt;/p&gt;
+
+&lt;p&gt;Binder is full of action and adventure, though still young in it’s development we plan to release in the summer of 2017. Binder comes fully-customizable with an entire API dedicated soley to writing modifications. &lt;/p&gt;
+
+&lt;p&gt;Binder is written in Java, allowing us to dynamically load your modifications with ease. We provide that neccissary core-classes that will allow you to modify what you need to, and not have to worry about Vertex Buffer Objects and the such.&lt;/p&gt;
+
+&lt;p&gt;Binder is built ontop of the firm foundation of LWJGL, a proven Java OpenGL library. The game comes with native sound libraries, and also a fun loving texture pack just waiting to smile. &lt;/p&gt;
+
+&lt;p&gt;Using the native API, you can easily create an entire new GameLoop, the heart and brain of the game! Simply create a new Java class that extends the GameLoop class, send it to the BinderLoader class, and wow!&lt;/p&gt;
+
+&lt;p&gt;That’s all for now, I look forward to releasing the game soon!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 19 Mar 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com/blog/tips&tricks/code-snippets/binder/Binder-development-starts-now</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/tips&tricks/code-snippets/binder/Binder-development-starts-now</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>tips&amp;tricks</category>
+        
+        <category>code-snippets</category>
+        
+        <category>binder</category>
+        
+      </item>
+    
+      <item>
+        <title>Blog: Binder API released!</title>
+        <description>&lt;h4 id=&quot;binder-api&quot;&gt;Binder API&lt;/h4&gt;
+
+&lt;p&gt;The Binder API is completely &lt;/p&gt;
+</description>
+        <pubDate>Thu, 19 Mar 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com/blog/binder/code-snippets/api/Binder-API-released</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/binder/code-snippets/api/Binder-API-released</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>binder</category>
+        
+        <category>code-snippets</category>
+        
+        <category>api</category>
+        
+      </item>
+    
+      <item>
+        <title>Question: Why did the Chicken cross the road?</title>
+        <description>&lt;p&gt;To get to the other side.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 25 Apr 2014 12:54:46 -0400</pubDate>
+        <link>http://yourdomain.com/question/your-project-name</link>
+        <guid isPermaLink="true">http://yourdomain.com/question/your-project-name</guid>
+        
+        
+        <category>question</category>
+        
+      </item>
+    
+  </channel>
+</rss>
