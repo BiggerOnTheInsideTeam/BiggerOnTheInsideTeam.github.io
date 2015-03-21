@@ -5,9 +5,9 @@
     <description>Just an amazing game design company..</description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 20 Mar 2015 10:07:35 -0400</pubDate>
-    <lastBuildDate>Fri, 20 Mar 2015 10:07:35 -0400</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Sat, 21 Mar 2015 14:31:00 -0400</pubDate>
+    <lastBuildDate>Sat, 21 Mar 2015 14:31:00 -0400</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>Project: Binder</title>
@@ -25,6 +25,21 @@
         <category>project</category>
         
         <category>binder</category>
+        
+      </item>
+    
+      <item>
+        <title>Blog: Universal Game Application Loader</title>
+        <description>
+</description>
+        <pubDate>Thu, 19 Mar 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com/blog/ugap/UGAP</link>
+        <guid isPermaLink="true">http://yourdomain.com/blog/ugap/UGAP</guid>
+        
+        
+        <category>blog</category>
+        
+        <category>ugap</category>
         
       </item>
     
@@ -62,10 +77,58 @@
       </item>
     
       <item>
-        <title>Blog: Binder API released!</title>
-        <description>&lt;h4 id=&quot;binder-api&quot;&gt;Binder API&lt;/h4&gt;
+        <title>Blog: Binder API</title>
+        <description>&lt;h3 id=&quot;binder-api&quot;&gt;Binder API&lt;/h3&gt;
 
-&lt;p&gt;The Binder API is completely &lt;/p&gt;
+&lt;p&gt;The Binder API is in development, and will release soon after the game. The API (entitled Knapsack) is fully integrated, and will work fully with the obfuscated code. The Binder source will come obfuscated to prevent any copyright-infringement, but the API will add a clean, easy to use face on the messy code. For example in the Binder code (example class) the chunk class will be class Z, to render it we would call:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Z a = new Z(0, 0, 0);
+a.d();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But using Knapsack (which does all the nitty-gritty stuff) it would simply be:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Chunk c = new Chunk(0, 0, 0);
+c.render();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Easy huh? &lt;/p&gt;
+
+&lt;h4 id=&quot;plugin-system&quot;&gt;Plugin System&lt;/h4&gt;
+
+&lt;p&gt;Another improvement to the game code we made is that Knapsack is able to load plugins. Plugins are little &lt;strong&gt;JAR&lt;/strong&gt; files that contain new classes to expand Binder. The classes can be new worlds, new monsters, new blocks, new shapes, new textures, you name it! Each plugin is activated by the &lt;strong&gt;PluginLoader&lt;/strong&gt; class. In order for a plugin to be activated, it must have an entry in the &lt;strong&gt;Plugins.json&lt;/strong&gt; that follows the default formatting. So, in order to have your plugin activated on runtime simply add these lines to the &lt;strong&gt;Plugins.json&lt;/strong&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&quot;ExamplePlugin&quot;: {
+  &quot;main&quot;: &quot;me.wxwsk8er.ExamplePlugin.ExampleClass&quot;,
+  &quot;name&quot;: &quot;ExamplePlugin&quot;,
+  &quot;version&quot;: &quot;0.0.1&quot;,
+  &quot;author&quot;: &quot;wxwsk8er&quot;,
+  &quot;req_knapsack_v&quot;: &quot;0.0.1&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that these are &lt;strong&gt;JSON&lt;/strong&gt; formatted, this is required! Now, if you don’t understand any of that let me explain. Hopefully you are a little used to with the &lt;strong&gt;JSON&lt;/strong&gt; language (or &lt;strong&gt;YAML&lt;/strong&gt;) and can see the structure. It follows this structure:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[Plugin Entry Name]
+    &lt;ul&gt;
+      &lt;li&gt;[Plugin main class (extends JavaPlugin)]&lt;/li&gt;
+      &lt;li&gt;[Plugin name]&lt;/li&gt;
+      &lt;li&gt;[Plugin version]&lt;/li&gt;
+      &lt;li&gt;[Plugin (lead) author]&lt;/li&gt;
+      &lt;li&gt;[Version of Knapsack it was created for]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each plugin must have &lt;strong&gt;ONE&lt;/strong&gt; class that &lt;strong&gt;&lt;em&gt;extends JavaPlugin&lt;/em&gt;&lt;/strong&gt;, this is the class path that you use for the &lt;strong&gt;&lt;em&gt;main&lt;/em&gt;&lt;/strong&gt; attribute in your entry. This class will have a dedicated GID, configuration module, enable and disable methods, and a full event listener system. You can see the full list of items by typing &lt;strong&gt;&lt;em&gt;this.&lt;/em&gt;&lt;/strong&gt; in eclipse, all fields should showup. &lt;/p&gt;
+
+&lt;h4 id=&quot;configuration-module&quot;&gt;Configuration Module&lt;/h4&gt;
+
+&lt;p&gt;Knapsack ships with a built-in configuration module already setup to work with &lt;strong&gt;JSON&lt;/strong&gt; configuration files. Full &lt;strong&gt;&lt;em&gt;get()&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;isSet()&lt;/em&gt;&lt;/strong&gt;, and &lt;strong&gt;&lt;em&gt;save()&lt;/em&gt;&lt;/strong&gt; methods are included. Knapsack not only provides a working &lt;strong&gt;JSON&lt;/strong&gt; configuration system, but even better [other than smiles]! Knapsack comes with abstract interfaces allowing you to create your own configuration modules. Infact, you could even make your own configuration language and use it!&lt;/p&gt;
+
+&lt;p&gt;For starters, every &lt;strong&gt;Configuration&lt;/strong&gt; modules starts as a replica of the &lt;strong&gt;ConfigurationSection&lt;/strong&gt; class.  If all you want to do is use your module as a memory configuration, just implement the &lt;strong&gt;Configuration&lt;/strong&gt; class. If you want to have full file access (&lt;em&gt;save()&lt;/em&gt;, &lt;em&gt;read()&lt;/em&gt;, &lt;em&gt;write()&lt;/em&gt;, etc) you will need to &lt;strong&gt;&lt;em&gt;extend&lt;/em&gt;&lt;/strong&gt; the &lt;strong&gt;FileConfiguration&lt;/strong&gt; class. This class allows the creation of file configuration modules that can be recognized universally. The extends keyword masks the class’s data type to be &lt;strong&gt;FileConfiguration&lt;/strong&gt;, and allows the interfacing methods to be used universally. So if you want to build off of the JSONConfiguration class, you can get it &lt;a href=&quot;https://github.com/BiggerOnTheInside/Knapsack/blob/API/src/me/wxwsk8er/Knapsack/Configuration/JSONConfiguration.java&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 19 Mar 2015 00:00:00 -0400</pubDate>
         <link>http://yourdomain.com/blog/binder/code-snippets/api/Binder-API-released</link>

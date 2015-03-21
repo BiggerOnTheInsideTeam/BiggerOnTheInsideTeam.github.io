@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="/assets/ico/favicon.ico">
 
-    <title>Solid Studios - Binder API released!</title>
+    <title>Solid Studios - Binder API</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
@@ -62,7 +62,7 @@
             <div id="blue">
     <div class="container">
         <div class="row">
-            <h3>Binder API released!</h3>
+            <h3>Binder API</h3>
         </div><!-- /row -->
     </div> <!-- /container -->
 </div><!-- /blue -->
@@ -73,12 +73,60 @@
         <div class="col-lg-8">
             <! -- Blog Post  -->
             <p><img class="img-responsive" src="/assets/img/blog/hack_001.jpg"></p>
-            <a href="/blog/binder/code-snippets/api/Binder-API-released"><h3 class="ctitle">Binder API released!</h3></a>
+            <a href="/blog/binder/code-snippets/api/Binder-API-released"><h3 class="ctitle">Binder API</h3></a>
             <p><csmall>Mar 19, 2015. | By: wxwsk8er</csmall></p>
               
-            <h4 id="binder-api">Binder API</h4>
+            <h3 id="binder-api">Binder API</h3>
 
-<p>The Binder API is completely </p>
+<p>The Binder API is in development, and will release soon after the game. The API (entitled Knapsack) is fully integrated, and will work fully with the obfuscated code. The Binder source will come obfuscated to prevent any copyright-infringement, but the API will add a clean, easy to use face on the messy code. For example in the Binder code (example class) the chunk class will be class Z, to render it we would call:</p>
+
+<pre><code>Z a = new Z(0, 0, 0);
+a.d();
+</code></pre>
+
+<p>But using Knapsack (which does all the nitty-gritty stuff) it would simply be:</p>
+
+<pre><code>Chunk c = new Chunk(0, 0, 0);
+c.render();
+</code></pre>
+
+<p>Easy huh? </p>
+
+<h4 id="plugin-system">Plugin System</h4>
+
+<p>Another improvement to the game code we made is that Knapsack is able to load plugins. Plugins are little <strong>JAR</strong> files that contain new classes to expand Binder. The classes can be new worlds, new monsters, new blocks, new shapes, new textures, you name it! Each plugin is activated by the <strong>PluginLoader</strong> class. In order for a plugin to be activated, it must have an entry in the <strong>Plugins.json</strong> that follows the default formatting. So, in order to have your plugin activated on runtime simply add these lines to the <strong>Plugins.json</strong> file:</p>
+
+<pre><code>"ExamplePlugin": {
+  "main": "me.wxwsk8er.ExamplePlugin.ExampleClass",
+  "name": "ExamplePlugin",
+  "version": "0.0.1",
+  "author": "wxwsk8er",
+  "req_knapsack_v": "0.0.1"
+}
+</code></pre>
+
+<p>Notice that these are <strong>JSON</strong> formatted, this is required! Now, if you don’t understand any of that let me explain. Hopefully you are a little used to with the <strong>JSON</strong> language (or <strong>YAML</strong>) and can see the structure. It follows this structure:</p>
+
+<ul>
+  <li>[Plugin Entry Name]
+    <ul>
+      <li>[Plugin main class (extends JavaPlugin)]</li>
+      <li>[Plugin name]</li>
+      <li>[Plugin version]</li>
+      <li>[Plugin (lead) author]</li>
+      <li>[Version of Knapsack it was created for]</li>
+    </ul>
+  </li>
+  <li>…</li>
+</ul>
+
+<p>Each plugin must have <strong>ONE</strong> class that <strong><em>extends JavaPlugin</em></strong>, this is the class path that you use for the <strong><em>main</em></strong> attribute in your entry. This class will have a dedicated GID, configuration module, enable and disable methods, and a full event listener system. You can see the full list of items by typing <strong><em>this.</em></strong> in eclipse, all fields should showup. </p>
+
+<h4 id="configuration-module">Configuration Module</h4>
+
+<p>Knapsack ships with a built-in configuration module already setup to work with <strong>JSON</strong> configuration files. Full <strong><em>get()</em></strong>, <strong><em>isSet()</em></strong>, and <strong><em>save()</em></strong> methods are included. Knapsack not only provides a working <strong>JSON</strong> configuration system, but even better [other than smiles]! Knapsack comes with abstract interfaces allowing you to create your own configuration modules. Infact, you could even make your own configuration language and use it!</p>
+
+<p>For starters, every <strong>Configuration</strong> modules starts as a replica of the <strong>ConfigurationSection</strong> class.  If all you want to do is use your module as a memory configuration, just implement the <strong>Configuration</strong> class. If you want to have full file access (<em>save()</em>, <em>read()</em>, <em>write()</em>, etc) you will need to <strong><em>extend</em></strong> the <strong>FileConfiguration</strong> class. This class allows the creation of file configuration modules that can be recognized universally. The extends keyword masks the class’s data type to be <strong>FileConfiguration</strong>, and allows the interfacing methods to be used universally. So if you want to build off of the JSONConfiguration class, you can get it <a href="https://github.com/BiggerOnTheInside/Knapsack/blob/API/src/me/wxwsk8er/Knapsack/Configuration/JSONConfiguration.java">here</a></p>
 
 
             <div class="spacing"></div>
@@ -128,12 +176,23 @@
             <span class="badge badge-theme pull-right">1</span>
         </p>
     
+        <p>
+            <a href="/category/#ugap"><i class="fa fa-angle-right"></i> Ugap</a>
+            <span class="badge badge-theme pull-right">1</span>
+        </p>
+    
 
     <div class="spacing"></div>
 
     <h4>Recent Posts</h4>
     <div class="hline"></div>
         <ul class="popular-posts">
+             
+                <li>
+                    <a href="/blog/ugap/UGAP"><img src="/assets/img/blog/thumbs/knapsack.jpg" alt="Popular Post"></a>
+                    <p><a href="/blog/ugap/UGAP">Universal Game Application Loader</a></p>
+                <em>Posted on 19 Mar 2015</em>
+            </li>
              
                 <li>
                     <a href="/blog/tips&tricks/code-snippets/binder/Binder-development-starts-now"><img src="/assets/img/blog/thumbs/Binder.jpg" alt="Popular Post"></a>
@@ -143,7 +202,7 @@
              
                 <li>
                     <a href="/blog/binder/code-snippets/api/Binder-API-released"><img src="/assets/img/blog/thumbs/hack_001.png" alt="Popular Post"></a>
-                    <p><a href="/blog/binder/code-snippets/api/Binder-API-released">Binder API released!</a></p>
+                    <p><a href="/blog/binder/code-snippets/api/Binder-API-released">Binder API</a></p>
                 <em>Posted on 19 Mar 2015</em>
             </li>
              
@@ -162,6 +221,8 @@
             <a class="btn btn-theme" href="/category/#api" role="button">Api (1)</a>	         
         
             <a class="btn btn-theme" href="/category/#tips&tricks" role="button">Tips&tricks (1)</a>	         
+        
+            <a class="btn btn-theme" href="/category/#ugap" role="button">Ugap (1)</a>	         
         
     </p>
 </div>
